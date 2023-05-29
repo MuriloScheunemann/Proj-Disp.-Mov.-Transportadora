@@ -2,21 +2,34 @@
     margin: 0;
     padding: 0;
     /* facilita o dimensionamento dos elementos
-    dizendo que a borda do elemento pertence ao
-    tamanho total deste */
+    dizendo que a borda do elemento pertence ao tamanho total deste */
     box-sizing: border-box;
 }
 
 html {
-    background-color: #fff; /*Define a cor do fundo*/
+    background-color: #fff;
     color: #555;
-    font-family: 'Poppins', 'Arial', sans-serif; /*a terceira opção é qualquer fonte daquela família, note que o nome da família não esta entre aspas.*/
-    font-weight: 300; /*de acordo com a fonte que importamos*/
+    font-family: 'Poppins', 'Arial', sans-serif;
+    font-weight: 300;
     font-size: 20px;
-    text-rendering: optimizeLegibility; /*otimiza a renderização da fonte para letura, tendo uma melhor qualidade*/
+    text-rendering: optimizeLegibility;
+    /*otimiza a renderização da fonte para letura, tendo uma melhor qualidade*/
 }
 
-header nav{
+/* ESTILOS DO HERO-HEADER - MENU NAV, LOGO, BACKGROUND-IMAGE */
+header {
+    height: 100vh;
+    background-image: linear-gradient(rgb(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.9)), url(img/hero-header.png);
+    background-size: cover;
+    background-position: center;
+}
+
+header .menu-nav {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+}
+
+header nav {
     position: absolute;
     top: 20px;
     display: flex;
@@ -24,78 +37,198 @@ header nav{
     width: 100%;
 }
 
-header .logo{
+header .logo {
     width: 100px;
     margin-left: 20px;
-    border: solid 3px black;
+    border: solid 3px rgb(255, 255, 255);
+    border-radius: 5px;
 }
 
-header .logo :hover{
+header .logo:hover {
     border: solid 8px transparent;
+    transition: border 0.5s;
 }
 
-header .main-nav a{
+header .main-nav li a {
     color: white;
     font-size: 1.5rem;
+    padding: 7px;
 }
 
-header .main-nav a:hover{
-    border-bottom: orange;
+.main-nav li a:hover,
+.main-nav li a:active {
+    border: solid 2px #faa65d;
+    border-radius: 20px;
+    transition: border-bottom 0.2s;
 }
 
-header .main-nav{
+header .main-nav {
     list-style: none;
     display: flex;
     justify-content: space-around;
+    flex-grow: 1;
 }
 
-header {
-    height: 100vh;
-    background-image: linear-gradient(rgb(0, 0, 0,0.1), 
-    rgba(0,0,0,0.9)), url(img/img-hero-header.png);
-    background-size: cover;
-    background-position: center;
-}
-
-.hero-text-box{
+/* ************* ESTILOS DO HERO-TEXT-BOX = H1 E BOTOES **************** */
+.hero-text-box {
     position: absolute;
     top: 40%;
     left: 4%;
 }
 
-header h1{
+header h1 {
     margin: 0;
-    color: #fff;
-    font-weight: 300;
+    color: #ffffff;
+    font-weight: bold;
     word-spacing: 7px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
-header a{
+header a {
     text-decoration: none;
 }
 
-.btn:link, 
-.btn:visited{
-    border: solid orange;
+.btn:link,
+.btn:visited {
+    border: solid #faa65d;
     border-radius: 20px;
     padding: 5px 10px;
     margin-right: 10px;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
 }
 
-.btn-full{
-    background-color: orange;
+.btn-full {
+    background-color: #faa65d;
     color: #fff;
 }
 
-.btn-ghost{
-    color: orange;
+.btn-ghost {
+    color: #faa65d;
+}
+
+.btn-full:hover,
+.btn-full:active {
+    background-color: #faa65d;
+    border-color: #faa65d;
+    color: black;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+    border-color: #faa65d;
+    background-color: #faa65d;
+    transition: 0.5;
+    color: white;
+
+}
+/* ********** TEXTO COPY - MEIO ************** */
+.section-features {
+    margin: 20px 10%;
+    color: #555;
+    font-weight: 400;
+}
+
+.section-features p {
+    font-weight: 500;
+}
+
+.section-features>div>h2,
+.section-features>div>p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section-features .pitch {
+    margin: 20px 0;
 }
 
 
+.section-features .features {
+    margin-top: 40px;
+}
 
+.section-features .long-copy {
+    width: 70%;
+    margin: 0 auto;
+    line-height: 1.5rem;
+}
+/* ******** 3 TEXTOS EM CAIXA LARANJA ********** */
+.tres {
+    display: flex;
+    justify-content: space-between;
+    background-color: #faa65d;
+    border-radius: 50px;
+    padding: 30px;
+}
 
+/* *********** FOOTER  *************** */
+footer {
+    background-color: #51504c;
+    padding: 50px;
+    font-size: 80%;
+}
 
+.social-links {
+    list-style: none;
+    float: right;
+}
 
+.footer-nav li,
+.social-links .redes {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited {
+    text-decoration: none;
+    border: 0;
+    color: #888;
+    transition: color 0.2s;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active {
+    color: #eb8e43;
+}
+
+.redes:hover {
+    width: 53px;
+    transition: 0.3s;
+}
+
+footer p {
+    color: #888;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* *********** RESPONSIVIDADE - MENU NAV SUPERIOR; 3 TEXTOS EM CAIXA LARANJA */
+
+@media only screen and (max-width: 767px) {
+    
+    header .main-nav {
+        display: flex;
+        align-content: space-around;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+
+    header .main-nav li a {
+        padding: 0px;
+        border-bottom: inset 1px #faa65d;
+        margin-bottom: 3px;
+    }
+
+    .main-nav li a:hover,
+    .main-nav li a:active {
+        border: none;
+    }
+
+    .tres {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
